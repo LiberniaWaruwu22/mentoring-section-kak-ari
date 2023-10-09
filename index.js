@@ -1,10 +1,11 @@
-const http = require("http");
-const port = process.env.PORT || 3000;
-http
-  .createServer((req,res) =>{
-    res.write("hello world");
-    res.end();
-})
- .listen(port,()=>{
-    console.log(`Server running on localhost:${port}`);
+const express = require('express');
+const app = express();
+const port = 3000; // Ganti dengan port yang sesuai
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
